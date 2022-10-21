@@ -18,7 +18,7 @@ services:
       test: pg_isready -U postgres
 
   django:
-    image: apoorvabhishek/dr-katyayini:1.0
+    image: apoorvabhishek/dr-katyayini:2.0
     environment:
       USER_NAME: admin
       USER_PWD: admin
