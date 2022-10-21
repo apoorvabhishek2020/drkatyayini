@@ -16,16 +16,18 @@ class Patient(models.Model):
     drug_history = models.TextField()
     family_history = models.TextField()
     personal_history = models.ManyToManyField('PersonalHistory', blank = True)
-    prescribed_medicines = models.ManyToManyField('Medicine', blank = True)
     bp = models.CharField(max_length=20, verbose_name="BP (mm of Hg)")
     pulse_rate = models.CharField(max_length=20, verbose_name="Pulse Rate (BpM)")
     temperature = models.CharField(max_length=20, verbose_name="Temperature (°F)")
     pallor = models.CharField(max_length=20)
-    lcterus = models.CharField(max_length=20)
+    icterus = models.CharField(max_length=20)
     clubbing = models.CharField(max_length=20)
-    cyanosio = models.CharField(max_length=20)
-    lumph_adenopathy = models.CharField(max_length=20)
-    edenro = models.CharField(max_length=20)
+    cyanosis = models.CharField(max_length=20)
+    lymphadenopathy = models.CharField(max_length=20)
+    edema = models.CharField(max_length=20)
+    investigation = models.TextField()
+    provisional_diagnosis = models.TextField()
+    prescribed_medicines = models.ManyToManyField('Medicine', blank = True)
 
     def __str__(self) -> str:
         return self.name
